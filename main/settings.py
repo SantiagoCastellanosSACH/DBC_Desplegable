@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4_r#52!y2^+k3kbp#7o)-(9r@j&twsurkk!_m=k#^2b)cic5g&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 
 # Application definition
@@ -102,14 +102,15 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbc_prueba',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1', 
-        'PORT': '3306',   
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'dbc_prueba',
+        #'USER': 'root',
+        #'PASSWORD': '',
+        #'HOST': '127.0.0.1', 
+        #'PORT': '3306',   
     }
 }
 
@@ -153,7 +154,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT= "/staticfiles"
+STATIC_ROOT= "/static"
+
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
