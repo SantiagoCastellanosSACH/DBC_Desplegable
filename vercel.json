@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       { "src": "DBC_Desplegable/wsgi.py", "use": "@vercel/python" },
-      { "src": "build_files.sh", "use": "@vercel/static-build", "config": { "distDir": "staticfiles" } }
+      { "src": "build_files.sh", "use": "@vercel/python", "config": { "runtime": "python3.10.12" } }
     ],
     "routes": [
       { "src": "/static/(.*)", "dest": "/static/$1" },
