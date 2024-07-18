@@ -1,12 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "DBC_Desplegable/wsgi.py", "use": "@vercel/python" },
-      { "src": "build_files.sh", "use": "@vercel/python", "config": { "runtime": "python3.10.12" } }
-    ],
-    "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/(.*)", "dest": "DBC_Desplegable/wsgi.py" }
-    ]
-  }
+  "builds": [{
+      "src": "DBC_Desplegable/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+  }],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "DBC_Desplegable/wsgi.py"
+      }
+  ]
+}
   
